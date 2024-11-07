@@ -2,12 +2,11 @@ const express = require("express");
 const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
+const router = require("./router")
 
 
 
-app.get("/", (req, res)=>{
-    res.send("hello World");
-})
+app.use("/", router);
 
 
 const port = process.env.PORT || 3000;
