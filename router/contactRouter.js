@@ -1,8 +1,13 @@
 const router = require("express").Router();
+const contactController = require("../controller/contactController");
 
-router.get("/", (req, res) => {
+router.get("/", (req, res)=>{
     res.status(200).send("Hello World");
-})
+});
+
+router.get("/all-contact", contactController.allContactController);
+
+router.get("/my-contact/:id", contactController.myContactController);
 
 // router.get("/profile", (req, res) => {
 //     res.status(201).send("Hello Profile");
