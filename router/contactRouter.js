@@ -7,7 +7,7 @@ router.get("/", (req, res)=>{
 
 router.get("/all-contact", contactController.allContactController);
 
-router.get("/my-contact/:id", contactController.myContactController);
+router.get("/all-contact/:id", contactController.myContactController);
 
 // router.get("/profile", (req, res) => {
 //     res.status(201).send("Hello Profile");
