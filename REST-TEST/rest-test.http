@@ -1,0 +1,13 @@
+
+//Get Home Page
+GET http://localhost:5050
+
+###
+
+//Get ALL Contacts
+GET http://localhost:5050/all-contact/
+
+###
+
+//Get a single contact
+GET http://localhost:5050/all-contact/672d052820f788052bd8156b
