@@ -11,3 +11,32 @@ GET http://localhost:5050/all-contact/
 
 //Get a single contact
 GET http://localhost:5050/all-contact/672d052820f788052bd8156b
+
+###
+
+//Create a new contact
+POST http://localhost:5050/all-contact/ 
+Content-Type: application/json
+
+{     
+    "firstName": "Johnson",
+    "lastName": "Ade",
+    "favoriteColor": "Blue",
+    "birthday": "25/02/1982"
+} 
+
+###
+
+//Update contact
+PUT http://localhost:5050/all-contact/67333b69eb0b79bdb6453979
+Content-Type: application/json
+
+{     
+    "lastName": "Brendy",
+    "favoriteColor": "Green"
+} 
+
+###
+
+//Delete Contact
+DELETE http://localhost:5050/all-contact/67352573ba0c9f1138f0cc9c

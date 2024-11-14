@@ -1,20 +1,27 @@
 const router = require("express").Router();
-const contactController = require("../controller/contactController");
+const getContact = require("../controller/getContact");
+const createContact = require("../controller/createContact")
 
+//Home route
 router.get("/", (req, res)=>{
     res.status(200).send("Hello World");
 });
 
-router.get("/all-contact", contactController.allContactController);
+//Get all Contact in database
+router.get("/all-contact", getContact.allContactController);
 
-router.get("/all-contact/:id", contactController.myContactController);
+//Get a single contact by ID
+router.get("/all-contact/:id", getContact.myContactController);
 
-// router.get("/profile", (req, res) => {
-//     res.status(201).send("Hello Profile");
-// })
+//Create new contact
+router.post("/all-contact", createContact.createContact);
 
-// router.get("/about", (req, res) => {
-//     res.status(202).send("Hello About");
-// })
+//Update contact
+router.put("/all-contact/:id", createContact.updateContact);
+
+//Delete Contact
+router.delete("/all-contact/:id", createContact.deleteContact);
+
+
 
 module.exports = router;

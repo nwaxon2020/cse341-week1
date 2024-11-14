@@ -3,10 +3,18 @@ const app = express();
 const dotenv = require("dotenv");
 dotenv.config();
 const router = require("./router/contactRouter")
+const bodyParser = require("body-parser");
 
 // indicate if the mongo db is connected
 const data = require("./dataBase/data");
 data.contactData();
+
+//Use only for HTML purposes
+//app.use(bodyParser.urlencoded({extended: true}));
+ 
+app.use(bodyParser.json());
+
+
 
 app.use("/", router);
 

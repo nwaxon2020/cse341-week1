@@ -59,4 +59,7 @@ const myContactController = async (req, res, next) => {
     }
 }
 
+// CRUD PART OF THE ASSIGNMENT
+
+
 module.exports = {allContactController, myContactController};
