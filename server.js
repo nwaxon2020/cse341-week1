@@ -11,10 +11,29 @@ data.contactData();
 
 //Use only for HTML purposes
 //app.use(bodyParser.urlencoded({extended: true}));
- 
 app.use(bodyParser.json());
 
+//swagger import
+const swaggerUI = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
 
+const swaggerOption = {
+    swaggerDefinition: {
+        info: {
+            title: "Contact API",
+            version: "1.0.0",
+            description: "Simple Contact API",
+        },
+        host: "localhost:5050",
+    },
+    apis: ["./router/contactRouter.js"], 
+};
+
+const swaggerDoc = swaggerJsDoc(swaggerOption);
+console.log(swaggerDoc);
+
+// swagger middle-ware
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDoc) );
 
 app.use("/", router);
 
